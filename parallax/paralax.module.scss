@@ -1,0 +1,38 @@
+@use "../colors/colors" as *;
+@use "../mixins/mixins" as *;
+
+.paralax {
+	display: flex;
+	width: 100%;
+	height: 50vh;
+	overflow: hidden;
+	&__img {
+		@include paralax("/img/paralax/paralax-640.jpg");
+
+		transition: background-position 0.1s ease;
+	}
+}
+
+@media (min-width: 600px) {
+	.paralax {
+		&__img {
+			@include paralax("/img/paralax/paralax-1280.jpg");
+		}
+	}
+}
+
+@media (min-width: 1500px) {
+	.paralax {
+		&__img {
+			@include paralax("/img/paralax/paralax-1920.jpg");
+		}
+	}
+}
+
+@media (min-width: 2400px) {
+	.paralax {
+		&__img {
+			@include paralax("/img/paralax/paralax-hq.jpg");
+		}
+	}
+}
